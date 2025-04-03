@@ -1,0 +1,10 @@
+chromadb
+nltk
+pymupdf4llm
+ollama
+PyPDF2
+pdftitle
+openai
+langgraph
+langchain-ollama
+langchain_core
