@@ -8,6 +8,13 @@ This repository demonstrates how to build and run AI applications locally using 
 - [PostgreSQL:16.2-alpine3.19](https://hub.docker.com/layers/library/postgres/16.2-alpine3.19/images/sha256-8e50de55645e01728c523ab17dbf3c2f61f68bc3a8d73c86a6c55509a2bc4a22): Relational database for non-vector data.
 
 ### Prerequisites
+- Docker runner (Docker Desktop for example)
+- The "Remote Development" extension in Visual Studio Code
+- WSL Installed (Windows Only)
+- Docker configured to use WSL (Windows Only)
+
+![WSL Docker Setting](wsl_docker_setting.png)
+
 - **GPU Support**: Requires NVIDIA GPU, WSL with Docker integration, and [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation).
 - **CPU-Only Setup**: Comment out the `deploy` key in the `ollama` service in `docker-compose.yml`:
   ```yaml
@@ -24,6 +31,19 @@ This repository demonstrates how to build and run AI applications locally using 
 - **ChromaDB**: `chroma:8000`
 - **Ollama**: `ollama:11434`
 - **PostgreSQL**: `postgres:5432`
+
+### Build the dev container
+Open the command pallet in Visual Studio Code and select "Dev Containers: Rebuild and Reopen in Container".
+
+### Pull the LLMs
+Attach a shell to the "ollama" container and execute the following commands:
+
+```bash
+ollama pull llama3.1
+ollama pull mxbai-embed-large
+```
+
+![ollama pull screen shot](ollama_pull_ss.png)
 
 ### Examples
 This repository includes examples for:
